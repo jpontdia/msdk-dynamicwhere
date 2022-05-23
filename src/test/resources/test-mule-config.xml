@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:dynamicwhere="http://www.mulesoft.org/schema/mule/dynamicwhere"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/dynamicwhere http://www.mulesoft.org/schema/mule/dynamicwhere/current/mule-dynamicwhere.xsd">
+
+    <dynamicwhere:config name="config" configId="configId">
+        <dynamicwhere:connection requiredParameter="aValue" />
+    </dynamicwhere:config>
+
+    <flow name="sayHiFlow">
+        <dynamicwhere:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <dynamicwhere:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
