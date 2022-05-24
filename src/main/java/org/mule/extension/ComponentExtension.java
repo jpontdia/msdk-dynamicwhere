@@ -1,4 +1,4 @@
-package org.mule.extension.dynamicwhere.internal;
+package org.mule.extension;
 
 import org.mule.runtime.extension.api.annotation.Extension;
 import org.mule.runtime.extension.api.annotation.Configurations;
@@ -9,9 +9,9 @@ import org.mule.runtime.extension.api.annotation.dsl.xml.Xml;
  * This is the main class of an extension, is the entry point from which configurations, connection providers, operations
  * and sources are going to be declared.
  */
-@Xml(prefix = "dynamicwhere")
-@Extension(name = "Dynamicwhere-")
-@Configurations(DynamicwhereConfiguration.class)
-public class DynamicwhereExtension {
+@Xml(prefix = "jponte")
+@Extension(name = "Dynamic Where")
+@Configurations(ComponentConfiguration.class)
+public class ComponentExtension {
 
 }

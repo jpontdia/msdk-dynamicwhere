@@ -1,14 +1,14 @@
-package org.mule.extension.dynamicwhere.internal;
+package org.mule.extension;
 
 
 /**
  * This class represents an extension connection just as example (there is no real connection with anything here c:).
  */
-public final class DynamicwhereConnection {
+public final class ComponentConnection {
 
   private final String id;
 
-  public DynamicwhereConnection(String id) {
+  public ComponentConnection(String id) {
     this.id = id;
   }
 

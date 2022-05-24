@@ -1,5 +1,5 @@
-# mulesdk-dynamicwhere-connector
-*Mule SDK - Dynamic Where Connector for data repositories like Salesforce or relational databases*
+# msdk-dynamicwhere
+*Mule SDK - Dynamic Where Connector for data repositories like Salesforce or Relational Databases*
 *<br><br>**This is an ongoing project!!**<br>*
 ## Table of contents
 1. [Compilation Prerequisites](#compilation-prerequisites)

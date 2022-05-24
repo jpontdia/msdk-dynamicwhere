@@ -1,4 +1,4 @@
-package org.mule.extension.dynamicwhere.internal;
+package org.mule.extension;
 
 import org.mule.runtime.api.connection.ConnectionException;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
@@ -24,9 +24,9 @@ import org.slf4j.LoggerFactory;
  * will be pooled and reused. There are other implementations like {@link CachedConnectionProvider} which lazily creates and
  * caches connections or simply {@link ConnectionProvider} if you want a new connection each time something requires one.
  */
-public class DynamicwhereConnectionProvider implements PoolingConnectionProvider<DynamicwhereConnection> {
+public class ComponentConnectionProvider implements PoolingConnectionProvider<ComponentConnection> {
 
-  private final Logger LOGGER = LoggerFactory.getLogger(DynamicwhereConnectionProvider.class);
+  private final Logger LOGGER = LoggerFactory.getLogger(ComponentConnectionProvider.class);
 
  /**
   * A parameter that is always required to be configured.
@@ -43,12 +43,12 @@ public class DynamicwhereConnectionProvider implements PoolingConnectionProvider
   private int optionalParameter;
 
   @Override
-  public DynamicwhereConnection connect() throws ConnectionException {
-    return new DynamicwhereConnection(requiredParameter + ":" + optionalParameter);
+  public ComponentConnection connect() throws ConnectionException {
+    return new ComponentConnection(requiredParameter + ":" + optionalParameter);
   }
 
   @Override
-  public void disconnect(DynamicwhereConnection connection) {
+  public void disconnect(ComponentConnection connection) {
     try {
       connection.invalidate();
     } catch (Exception e) {
@@ -57,7 +57,7 @@ public class DynamicwhereConnectionProvider implements PoolingConnectionProvider
   }
 
   @Override
-  public ConnectionValidationResult validate(DynamicwhereConnection connection) {
+  public ConnectionValidationResult validate(ComponentConnection connection) {
     return ConnectionValidationResult.success();
   }
 }
